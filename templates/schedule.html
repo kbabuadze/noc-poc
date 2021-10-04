@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            NOCMAN
+        </title>
+    </head>
+    <body>
+        {% if request.method == "GET" %}
+        <form action="/schedule" method="POST">
+            <label>
+                Please enter URL to monitor:
+            </label>
+            <input id="url" name="url" type="text" />
+            <input type="submit" />
+        </form>
+        {% endif %}
+
+        {% if request.method == "POST" %}
+            Add <b> {{ url }} </b> to monitoring? 
+            <form action="/schedule" method="POST">
+                <input type="hidden" id="url" name="url" value="{{ url }}" />
+                <input type="submit" value="Yes" />
+                <input type="button" value="Go back!" onclick="history.back()">
+            </form>
+        {% endif %}
+    </body>
+</html>

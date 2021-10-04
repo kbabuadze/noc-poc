@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            NOCMAN
+        </title>
+    </head>
+    <body>
+        <h1>Monitoring tasks</h1>
+        <div>
+        {% for task in tasks.keys() %}
+            <p>{{ task }} status: {{ tasks[task][1] }}</p>
+        {% endfor %}
+        </div>
+        <p><a href="/check">Status</a></p>
+        <p><a href="/schedule">Schedule</a></p>
+    </body>
+</html>
